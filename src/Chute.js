@@ -1,8 +1,10 @@
-export default function Chute() {
+export default function Chute({inicio}) {
+
+
     return (
         <div className="chute">
             <h1>Já sei a palavra!</h1>
-            <input></input>
+            <input disabled ></input>
             <div className="botaoChute">
                 Chutar
             </div>

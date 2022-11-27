@@ -8,11 +8,18 @@ function App() {
   const [palavra, setPalavra] = React.useState("");
   const [inicio, setInicio] = React.useState(false);
   const [arrayPalavra, setArrayPalavra] = React.useState([])
+  const [erro, setErro] = React.useState(0)
+  const [corPalavra, setCorPalavra] = React.useState("palavra")
+
 
   return (
     <div className="app">
 
       <Jogo palavras={palavras}
+
+        corPalavra={corPalavra}
+        setCorPalavra={setCorPalavra}
+
         palavra={palavra} //imprime na tela!
         setPalavra={setPalavra}
 
@@ -20,9 +27,11 @@ function App() {
         setInicio={setInicio}
             
         arrayPalavra={arrayPalavra}// transforma a string da palavra escolhida em array
-        setArrayPalavra={setArrayPalavra} />
+        setArrayPalavra={setArrayPalavra} 
+        
+        erro={erro}/>
 
-      <Letras inicio={inicio} />
+      <Letras inicio={inicio} arrayPalavra={arrayPalavra} palavra = {palavra} setPalavra={setPalavra} erro={erro} setErro={setErro} setCorPalavra={setCorPalavra}/>
 
       <Chute inicio={inicio}/>
     </div>

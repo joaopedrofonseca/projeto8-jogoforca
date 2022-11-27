@@ -48,6 +48,14 @@
     letter-spacing: 10px;
 }
 
+.perdeuVermelho{
+    color: red;
+}
+
+.ganhouVerde{
+    color: #27AE60;
+}
+
 .letras {
     width: 750px;
     height: 91px;

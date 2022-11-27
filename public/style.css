@@ -18,6 +18,7 @@
 }
 
 .botaoIniciar {
+    cursor:pointer;
     background: #27AE60;
     border-radius: 8px;
     width: 200px;
@@ -57,7 +58,7 @@
 }
 
 .letras {
-    width: 750px;
+    width: 700px;
     height: 91px;
     position: absolute;
     left: 211px;
@@ -67,6 +68,7 @@
 }
 
 .letra {
+    cursor:pointer;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
@@ -122,6 +124,7 @@
 }
 
 .botaoChute {
+    cursor:pointer;
     width: 100px;
     height: 40px;
     background: #E1ECF4;

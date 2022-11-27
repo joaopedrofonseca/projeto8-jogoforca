@@ -55,6 +55,7 @@ function App() {
 
       <Chute
         inicio={inicio}
+        setInicio={setInicio}
         etInicio={setInicio}
         setCorPalavra={setCorPalavra}
         arrayPalavra={arrayPalavra}

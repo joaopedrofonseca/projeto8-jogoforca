@@ -10,12 +10,19 @@ function App() {
   const [arrayPalavra, setArrayPalavra] = React.useState([])
   const [erro, setErro] = React.useState(0)
   const [corPalavra, setCorPalavra] = React.useState("palavra")
-
+  const [listaLetras, setListaLetras] = React.useState([])
+  const [click, setClick] = React.useState(0)
+  const [arrayClicks, setArrayClicks] = React.useState([])
 
   return (
     <div className="app">
 
       <Jogo palavras={palavras}
+        arrayClicks={arrayClicks} setArrayClicks={setArrayClicks}
+        click={click} setClick={setClick}
+
+        listaLetras={listaLetras}
+        setListaLetras={setListaLetras}
 
         corPalavra={corPalavra}
         setCorPalavra={setCorPalavra}
@@ -33,6 +40,10 @@ function App() {
         erro={erro} />
 
       <Letras
+        click={click}
+        setClick={setClick}
+        listaLetras={listaLetras}
+        setListaLetras={setListaLetras}
         inicio={inicio}
         setInicio={setInicio}
         arrayPalavra={arrayPalavra}

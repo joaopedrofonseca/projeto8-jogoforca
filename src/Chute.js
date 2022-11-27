@@ -28,10 +28,11 @@ export default function Chute({ inicio, setInicio, arrayPalavra, palavra, setPal
         <div className="chute">
             <h1>Já sei a palavra!</h1>
             <input
+                data-test="guess-input"
                 disabled={(inicio === false) ? true : false}
                 value={chutar}
                 onChange={e => setChutar(e.target.value)}></input>
-            <button className="botaoChute" onClick={chute} disabled={(inicio === false) ? true : false}>
+            <button data-test="guess-button" className="botaoChute" onClick={chute} disabled={(inicio === false) ? true : false}>
                 Chutar
             </button>
 

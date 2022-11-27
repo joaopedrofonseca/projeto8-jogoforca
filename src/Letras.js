@@ -10,11 +10,11 @@ export default function Letras({ inicio,setInicio, arrayPalavra, palavra, setPal
 }
 
 function Letra({ l, id, inicio,setInicio, arrayPalavra, palavra, setPalavra, setErro, erro, setCorPalavra}) {
-    const [desativarTecla, setDesativarTecla] = React.useState(false)
-    const [cssTecla, setCssTecla] = React.useState("letra")
-    function clickLetra() {
-        if (arrayPalavra.includes(id)){
+    const [listaLetras, setListaLetras] = React.useState([])
+    function clickLetra(letra) {
+        if (arrayPalavra.includes(id) && !listaLetras.includes(id)){
             let novoArray = []
+            setListaLetras([...listaLetras, id])
         arrayPalavra.forEach((e) => {
             if (e === id) { novoArray.push(id) }
             else if (e !== "_" && palavra.includes(e)) { novoArray.push(e) }
@@ -22,10 +22,12 @@ function Letra({ l, id, inicio,setInicio, arrayPalavra, palavra, setPalavra, set
         setPalavra(novoArray) }
 
         else{
+            setListaLetras([...listaLetras, id])
             let error = erro+1;
             setErro(error)
             confereJogo()
         }
+        console.log(arrayPalavra)
     }
 
     function confereJogo(){
@@ -33,16 +35,19 @@ function Letra({ l, id, inicio,setInicio, arrayPalavra, palavra, setPalavra, set
             setPalavra(arrayPalavra)
             setCorPalavra("palavra perdeuVermelho")
             setInicio(false)
-        } else if (palavra.includes("_") === false){
-            setCorPalavra("palavra ganhouVerde")
+        } else if (palavra.indexOf("_") === -1){
+            console.log(palavra.indexOf("_"))
+            setPalavra(arrayPalavra)
             setInicio(false)
+            setCorPalavra("palavra ganhouVerde")
         }
+        
     }
     return (
         <button
-            disabled={(inicio === false) ? true : desativarTecla}
-            className={inicio ? "letra" : "letra ldesabilitado"}
-            onClick={clickLetra}
+            disabled={(inicio === false) ? true : false}
+            className={!inicio || listaLetras.includes(id) ? "letra ldesabilitado" : "letra "}
+            onClick={()=>clickLetra(id)}
             id={id}> {l} </button>
     )
 }

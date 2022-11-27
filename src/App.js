@@ -25,16 +25,31 @@ function App() {
 
         inicio={inicio} //habilita/desabilita teclado e input
         setInicio={setInicio}
-            
+
         arrayPalavra={arrayPalavra}// transforma a string da palavra escolhida em array
-        setArrayPalavra={setArrayPalavra} 
-        
+        setArrayPalavra={setArrayPalavra}
+
         setErro={setErro}
-        erro={erro}/>
+        erro={erro} />
 
-      <Letras inicio={inicio} setInicio={setInicio} arrayPalavra={arrayPalavra} palavra = {palavra} setPalavra={setPalavra} erro={erro} setErro={setErro} setCorPalavra={setCorPalavra}/>
+      <Letras
+        inicio={inicio}
+        setInicio={setInicio}
+        arrayPalavra={arrayPalavra}
+        palavra={palavra}
+        setPalavra={setPalavra}
+        erro={erro}
+        setErro={setErro}
+        setCorPalavra={setCorPalavra} />
 
-      <Chute inicio={inicio} setInicio={setInicio} setCorPalavra={setCorPalavra} arrayPalavra={arrayPalavra} palavra={palavra} setPalavra={setPalavra} setErro={setErro}/>
+      <Chute
+        inicio={inicio}
+        etInicio={setInicio}
+        setCorPalavra={setCorPalavra}
+        arrayPalavra={arrayPalavra}
+        palavra={palavra}
+        setPalavra={setPalavra}
+        setErro={setErro} />
     </div>
   );
 }

@@ -26,20 +26,21 @@ function App() {
 
         corPalavra={corPalavra}
         setCorPalavra={setCorPalavra}
-
-        palavra={palavra} //imprime na tela!
+        palavra={palavra} 
         setPalavra={setPalavra}
 
-        inicio={inicio} //habilita/desabilita teclado e input
+        inicio={inicio} 
         setInicio={setInicio}
 
-        arrayPalavra={arrayPalavra}// transforma a string da palavra escolhida em array
+        arrayPalavra={arrayPalavra}
         setArrayPalavra={setArrayPalavra}
 
         setErro={setErro}
         erro={erro} />
 
       <Letras
+        setArrayClicks={setArrayClicks}
+        arrayClicks={arrayClicks}
         click={click}
         setClick={setClick}
         listaLetras={listaLetras}
